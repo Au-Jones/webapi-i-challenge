@@ -1,11 +1,12 @@
 // implement your API here
-
+// require('dotenv').config(); 
+// const server = require['apply./api/server.js'];
 const express = require('express');
 const server = express();
 const db = require('./data/db');
 
 server.get('/',(req,res) => {
-    res.send('hello world');
+    res.send('hello Angel');
 })
 server.use(express.json());
 server.post('/api/users', (req,res) => {
@@ -68,7 +69,10 @@ server.put('/api/users/:id', (req,res) => {
 
         })
 
-server.listen(8000, () => console.log('my first express server is running on port 8000'));
+const port = process.env.PORT || 8000;
+       
+
+server.listen(port, () => console.log(`my first express server is running on port ${port}`));
 
    
 
